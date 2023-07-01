@@ -1,9 +1,15 @@
-import math
 n=int(input())
-m=list(map(int,input().split()))
-n1=m[0]
-n2=m[1]
-hcf=math.gcd(n1,n2)
-for i in range(2,len(m)):
-    hcf=math.gcd(hcf,m[i])
-print(hcf)
+x=list(map(int,input().split()))
+c=d=0
+for i in x:
+    c=0
+    for j in x:
+        if j%i!=0:
+            c=1
+            break
+    if c==0:
+        print(i)
+        d=1
+        break
+if d==0:
+    print("1")
